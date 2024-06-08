@@ -7,9 +7,9 @@ let c = Number(arr[2])
 
 let min;
 
-if (a < b && a < c)
+if (a <= b && a <= c)
     min = a
-else if (a < b && c < a)
+else if (a <= b && c <= a)
     min = c
 else 
     min = b
