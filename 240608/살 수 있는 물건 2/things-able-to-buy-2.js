@@ -7,6 +7,9 @@ if (a >= 3000) {
 else if (a >= 1000) {
     console.log("mask");
 } 
+else if (a >= 500) {
+    console.log("pen");
+} 
 else {
     console.log("no");
 }
