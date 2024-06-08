@@ -9,7 +9,7 @@ let min;
 
 if (a <= b && a <= c)
     min = a
-else if (a <= b && c <= a)
+else if (c <= b && c <= a)
     min = c
 else 
     min = b
