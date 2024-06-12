@@ -5,6 +5,6 @@ let cnt = 0
 
 while (n > 1){
     cnt++;
-    n /= cnt
+    n = parseInt(n / cnt)
 }
 console.log(cnt)
