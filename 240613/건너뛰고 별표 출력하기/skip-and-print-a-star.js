@@ -10,6 +10,7 @@ for (let i = 0; i < n; i++) {
         str += "*";
     }
     console.log(str);
+    console.log()
 }
 
 for (let i = n; i > 0; i--) {
