@@ -1,12 +1,17 @@
 from itertools import combinations
 
-N, S = map(int, input().split(" "))
-arr = list(map(int, input().split(" ")))
+N, S = map(int, input().strip().split())
+arr_input = input().strip()
 
-combs = list(combinations(arr, N-2))
+if arr_input:
+    arr = list(map(int, arr_input.split()))
+else:
+    arr = []
+
+combs = list(combinations(arr, N - 2))
 diffs = []
 
-for i in combs:
-    diffs.append(abs(S - sum(i)))
+for comb in combs:
+    diffs.append(abs(S - sum(comb)))
 
 print(min(diffs))
