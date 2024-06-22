@@ -6,7 +6,7 @@ let arrB = input[2].split(" ").map(Number)
 let flag = false
 
 for (let i = 0; i <= n1 - n2; i++){
-    if (arrA.slice(i, i + n2) === arrB){
+    if (arrA.slice(i, i + n2).join() === arrB.join()){
         flag = true
         break
     }
