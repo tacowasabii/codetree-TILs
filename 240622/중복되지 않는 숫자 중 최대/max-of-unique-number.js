@@ -1,6 +1,6 @@
 const fs = require("fs");
 let input = fs.readFileSync(0).toString().trim().split("\n");
-let arr = input[1].split(" ").map(Number)
+let arr = input[1].split(" ").map(Number);
 let frequency = {};
 
 for (let elem of arr) {
@@ -13,9 +13,9 @@ for (let elem of arr) {
 
 let maxUnique = -1;
 for (let num in frequency) {
-    if (frequency[num] === 1 && num > maxUnique) {
-        maxUnique = num;
+    if (frequency[num] === 1 && Number(num) > maxUnique) {
+        maxUnique = Number(num);
     }
 }
 
-console.log(maxUnique)
+console.log(maxUnique);
