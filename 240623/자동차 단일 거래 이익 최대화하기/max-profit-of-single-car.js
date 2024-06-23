@@ -4,7 +4,7 @@ let n = Number(input[0])
 let arr = input[1].split(" ").map(Number);
 let profit = 0
 let price = arr[0]
-let profits = []
+let profits = [0]
 
 for (let i = 1; i < n; i++){
     if (arr[i] > price){
