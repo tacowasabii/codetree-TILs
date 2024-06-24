@@ -1,7 +1,6 @@
 const fs = require("fs");
 let n = Number(fs.readFileSync(0).toString().trim());
-let cnt = 1
-let arr2d = Array(n).fill(0).map(() => Array(cnt++).fill(0));
+let arr2d = Array(n).fill(0).map(() => Array(n).fill(0));
 
 for (let i = 0; i < 5; i++){
     for (let j = 0; j < 5; j++){
