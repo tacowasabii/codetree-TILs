@@ -5,7 +5,8 @@ let str = input
 while(true){
     console.log(str)
     str = str.slice(-1) + str.slice(0, -1)
-    if (str === input)
+    if (str === input){
         console.log(str)
         break
+    }   
 }
