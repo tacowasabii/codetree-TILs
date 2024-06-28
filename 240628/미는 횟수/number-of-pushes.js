@@ -10,4 +10,8 @@ while(true){
         console.log(n)
         break
     }
+    if (n >= a.length){
+        console.log(-1)
+        break
+    }
 }
