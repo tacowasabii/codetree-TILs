@@ -6,12 +6,12 @@ let arr = input[1].split(" ").map(Number);
 
 let max_pos = String(Math.max(...arr)).length;
 
-for (let i = max_pos - 1; i >= 0; i--) {
+for (let i = 0; i < max_pos; i++) {
 
     let buckets = Array.from({ length: 10 }, () => []);
 
     for (let num of arr) {
-        let digit = Math.floor(num / Math.pow(10, max_pos - 1 - i)) % 10;
+        let digit = Math.floor(num / Math.pow(10, i)) % 10;
         buckets[digit].push(num);
     }
 
