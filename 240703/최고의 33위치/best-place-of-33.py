@@ -6,8 +6,10 @@ ans = 0
 
 for i in range(n - 2):
     for j in range(n - 2):
-        Sum = 0
-        for elem in matrix[i:i + 3]:
-            Sum += sum(elem[j:j + 3])
+        Sum = sum(
+            matrix[i + x][j + y]
+            for x in range(3)
+            for y in range(3)
+        )
         ans = max(ans, Sum)
 print(ans)
