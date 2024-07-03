@@ -1,7 +1,7 @@
 n = int(input())
 matrix = []
 for _ in range(n):
-    matrix.append(list(map(int, input().split(" "))))
+    matrix.append(list(map(int, input().split())))
 ans = 0
 
 for i in range(n - 2):
