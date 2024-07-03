@@ -7,9 +7,11 @@ let ans = 0
 for (let i = 0; i <= n - 3; i++){
     for (let j = 0; j <= n - 3; j++){
         let sum = 0
-        matrix.slice(i, i + 3).forEach((elem) => {
-            sum += elem.slice(j, j + 3).reduce((acc, val) => acc + val, 0)
-        })
+        for (let x = 0; x < 3; x++) {
+            for (let y = 0; y < 3; y++) {
+                sum += matrix[i + x][j + y];
+            }
+        }
         ans = Math.max(sum, ans)
     }
 }
