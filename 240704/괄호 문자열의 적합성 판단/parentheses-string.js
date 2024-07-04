@@ -1,21 +1,20 @@
 const fs = require("fs")
 const input = fs.readFileSync(0).toString().trim().split("")
 let stack = []
-let flag = true
 
 for (let elem of input){
     if (elem === '(')
         stack.push(elem)
     else {
         if (stack.length === 0){
-            flag = false
-            break
+            console.log("No")
+            process.exit(0);
         }
         stack.pop()
     }
 }
 
-if (stack.length === 0 && flag)
+if (stack.length === 0)
     console.log("Yes")
 else
     console.log("No")
