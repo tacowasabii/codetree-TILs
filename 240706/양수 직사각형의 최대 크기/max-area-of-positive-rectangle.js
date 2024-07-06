@@ -2,9 +2,6 @@ const fs = require("fs")
 const input = fs.readFileSync(0).toString().trim().split("\n")
 const [n, m] = input[0].split(" ")
 const table = input.slice(1).map(line => line.split(" ").map(Number));
-[3, 6, 7, -4, 1],
-[6, 1, 8, 15, -5,],
-[3, -5, 1, 16, 3]]
 let ans = 0
 
 for (let i = 1; i <= n; i++){
