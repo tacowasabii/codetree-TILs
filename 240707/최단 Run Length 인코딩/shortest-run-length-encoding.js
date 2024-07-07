@@ -20,7 +20,7 @@ function RLE(arr) {
 
 const fs = require("fs")
 const input = fs.readFileSync(0).toString().trim().split("")
-let len = input.length
+let len = 100
 
 for (let i = 0; i < input.length; i++){
     len = Math.min(len, RLE(input.slice(input.length - i).concat(input.slice(0, input.length - i))).length)
