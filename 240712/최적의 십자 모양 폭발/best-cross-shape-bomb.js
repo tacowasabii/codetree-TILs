@@ -8,12 +8,16 @@ function bomb(arr, n, row, col){
         }
     }
 
-    for (let i = n - 1; i > 0; i--){
-        for(let j = 0; j < n; j++){
-            if (arr_copy[i][j] == 0){
-                arr_copy[i][j] = arr_copy[i - 1][j]
-                arr_copy[i - 1][j] = 0
+    for (let j = 0; j < n; j++){
+        tmp = []
+        for (let i = 0; i < n; i++){
+            if (arr_copy[i][j] !== 0){
+                tmp.push(arr_copy[i][j])
             }
+        }
+        tmp = Array(n - tmp.length).fill(0).concat(tmp)
+        for (let k = 0; k < n; k++){
+            arr_copy[k][j] = tmp[k]
         }
     }
     return arr_copy
