@@ -1,6 +1,7 @@
 function bomb(arr, n, row, col){
-    arr_copy = JSON.parse(JSON.stringify(arr))
-    power = arr_copy[row][col]
+    let arr_copy = arr.map(row => row.slice());
+    let power = arr_copy[row][col];
+
     for (let i = 0; i < n; i++){
         for (let j = 0; j < n; j++){
             if ((i > row - power && i < row + power && j === col) || (j > col - power && j < col + power && i === row))
@@ -9,7 +10,7 @@ function bomb(arr, n, row, col){
     }
 
     for (let j = 0; j < n; j++){
-        tmp = []
+        let tmp = []
         for (let i = 0; i < n; i++){
             if (arr_copy[i][j] !== 0){
                 tmp.push(arr_copy[i][j])
@@ -28,22 +29,22 @@ const input = fs.readFileSync(0).toString().trim().split("\n")
 const n = Number(input[0])
 let arr = input.slice(1).map((line) => line.split(" ").map(Number))
 let ans = 0
-let new_arr
 
 for (let i = 0; i < n; i++){
     for (let j = 0; j < n; j++){
-        new_arr = bomb(arr.slice(), n, i, j)
+        let new_arr = bomb(arr, n, i, j)
         let cnt = 0
-        for (let i = 0; i < n; i++){
-            for (let j = 0; j < n - 1; j++){
-                if (new_arr[i][j] !== 0 && new_arr[i][j] === new_arr[i][j + 1])
-                    cnt++
-                if (new_arr[j][i] !== 0 && new_arr[j][i] === new_arr[j + 1][i])
-                    cnt++
+        for (let x = 0; x < n; x++) { 
+            for (let y = 0; y < n - 1; y++) { 
+                if (new_arr[x][y] !== 0 && new_arr[x][y] === new_arr[x][y + 1]) {
+                    cnt++;
+                }
+                if (new_arr[y][x] !== 0 && new_arr[y][x] === new_arr[y + 1][x]) {
+                    cnt++;
+                }
             }
         }
         ans = Math.max(ans, cnt)
-        cnt = 0
     }
 }
 
