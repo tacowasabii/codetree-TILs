@@ -3,6 +3,7 @@ from copy import deepcopy
 def bomb(arr, n, row, col):
     new_arr = deepcopy(arr)
     power = int(new_arr[row][col])
+
     for j in range(n):
         tmp = ""
         for i in range(n):
@@ -16,18 +17,18 @@ def bomb(arr, n, row, col):
     return new_arr
 
 n = int(input())
-arr = [input().split(" ") for _ in range(n)]
+arr = [input().split() for _ in range(n)]
 ans = 0
 
 for i in range(n):
     for j in range(n):
         new_arr = bomb(arr, n, i, j)
         cnt = 0
-        for k in range(n):
-            for v in range(n - 1):
-                if new_arr[k][v] != '0' and new_arr[k][v] == new_arr[k][v + 1]:
+        for x in range(n):
+            for y in range(n - 1):
+                if new_arr[x][y] != '0' and new_arr[x][y] == new_arr[x][y + 1]:
                     cnt += 1
-                if new_arr[v][k] != '0' and new_arr[v][k] == new_arr[v + 1][k]:
+                if new_arr[y][x] != '0' and new_arr[y][x] == new_arr[y + 1][x]:
                     cnt += 1
         ans = max(ans, cnt)
 
