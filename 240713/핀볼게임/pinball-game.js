@@ -41,6 +41,6 @@ function time(x, y, dir){
 let ans = 0
 
 for (let i = 0; i < n; i++){
-    ans = Math.max(time(i, 0, [1, 0]), time(n - 1, i, [0, 1]), time(i, n - 1, [-1, 0]), time(0, i, [1, 0]), ans)
+    ans = Math.max(time(i, 0, [1, 0]), time(n - 1, i, [0, 1]), time(i, n - 1, [-1, 0]), time(0, i, [0, -1]), ans)
 }
 console.log(ans)
