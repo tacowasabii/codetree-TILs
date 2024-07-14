@@ -3,12 +3,16 @@ function changePosition(n, row, col, direction) {
 
     if (direction === 'L' && col === 1) {
         direction = 'R';
+        return [row, col, direction];
     } else if (direction === 'R' && col === n) {
         direction = 'L';
+        return [row, col, direction];
     } else if (direction === 'U' && row === 1) {
         direction = 'D';
+        return [row, col, direction];
     } else if (direction === 'D' && row === n) {
         direction = 'U';
+        return [row, col, direction];
     }
 
     row += dirs[direction][0];
@@ -28,7 +32,7 @@ for (let i = 1; i <= m; i++){
     balls.push({r: Number(r), c: Number(c), d, w: Number(w), num: i})
 }
 
-for (let time = 0; time <= t; time++){
+for (let time = 0; time < t; time++){
     const newPositions = new Map();
 
     for (let ball of balls){
