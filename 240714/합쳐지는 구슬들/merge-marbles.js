@@ -28,7 +28,7 @@ for (let i = 1; i <= m; i++){
     balls.push({r: Number(r), c: Number(c), d, w: Number(w), num: i})
 }
 
-for (let time = 0; time < t; time++){
+for (let time = 0; time <= t; time++){
     const newPositions = new Map();
 
     for (let ball of balls){
@@ -45,7 +45,7 @@ for (let time = 0; time < t; time++){
             newPositions.set(key, [ball])
         }
     }
-    
+
     const newBalls = []
     for (const group of newPositions.values()){
         if (group.length === 1){
@@ -68,6 +68,6 @@ for (let time = 0; time < t; time++){
 }
 
 const remainingBallsCount = balls.length
-const maxWeight = Math.max(...balls.map((ball) => ball.w))
+const maxWeight = Math.max(...balls.map(ball => ball.w))
 
 console.log(remainingBallsCount, maxWeight);
