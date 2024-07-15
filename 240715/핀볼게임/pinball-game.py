@@ -1,5 +1,5 @@
 n = int(input())
-grid = [list(map(int, input().split(" "))) for _ in range(n)]
+grid = [list(map(int, input().split())) for _ in range(n)]
 
 def changePosition(x, y, direction):
     dx = [1, 0, -1, 0]
