@@ -19,12 +19,13 @@ def changePosition(x, y, direction):
 
 def calcTime(x, y, direction):
     time = 1
-    while(x >= 0 and x < n and y >= 0 and y < n):
+    while 0 <= x < n and 0 <= y < n:
         x, y, direction = changePosition(x, y, direction)
         time += 1
     return time
 
+time = 0
 for i in range(n):
-    time = max(calcTime(0, i, 0), calcTime(i, n - 1, 1), calcTime(n - 1, i, 2), calcTime(i, 0, 3))
+    time = max(time, calcTime(0, i, 0), calcTime(i, n - 1, 1), calcTime(n - 1, i, 2), calcTime(i, 0, 3))
 
 print(time)
