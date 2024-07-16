@@ -47,11 +47,11 @@ for _ in range(t):
         else:
             w = 0
             max_idx = 0
-            n = 0
+            num = 0
             for idx, ball in enumerate(group):
                 w += ball['w']
-                if ball['n'] > n:
-                    n = ball['n']
+                if ball['n'] > num:
+                    num = ball['n']
                     max_idx = idx
             group[max_idx]['w'] = w
             new_balls.append(group[max_idx])
