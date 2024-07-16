@@ -14,13 +14,13 @@ for i in range(m):
     balls.append({'r':int(r), 'c': int(c), 'd': directionDict[d], 'w': int(w), 'n': i})
 
 def changePosition(r, c, direction):
-    dr = [-1, 0, 1, 0]
-    dc = [0, 1, 0, -1]
+    dr = [-1, 0, 0, 1]
+    dc = [0, 1, -1, 0]
 
     nr = r + dr[direction]
     nc = c + dc[direction]
 
-    if not (0 <= nr < n and 0 <= nc < n):
+    if not (0 < nr <= n and 0 < nc <= n):
         direction = 3 - direction
     else:
         r = nr
@@ -55,6 +55,7 @@ for _ in range(t):
                     max_idx = idx
             group[max_idx]['w'] = w
             new_balls.append(group[max_idx])
+
     balls = [*new_balls]
 max_w = 0
 
