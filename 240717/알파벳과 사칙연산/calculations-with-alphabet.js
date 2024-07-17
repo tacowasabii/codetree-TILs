@@ -54,7 +54,7 @@ for (let elem of input){
 }
 
 const perms = permutation(alp.size)
-let ans = 0
+let ans = Number.MIN_SAFE_INTEGER
 
 for (let perm of perms){
     exp = ""
