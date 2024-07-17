@@ -46,8 +46,10 @@ let idx = 0
 
 for (let elem of input){
     if (elem.charCodeAt(0) >= 'a'.charCodeAt(0) && elem.charCodeAt(0) <= 'f'.charCodeAt(0)){
-        alp.set(elem, idx)
-        idx++
+        if (!alp.has(elem)){
+            alp.set(elem, idx)
+            idx++
+        }
     }
 }
 
