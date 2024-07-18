@@ -28,9 +28,9 @@ function calc(expression){
             result += nextNumber;
         } else if (operator === '-') {
             result -= nextNumber;
-        } else (operator === '*') {
+        } else {
             result *= nextNumber;
-        }
+        } 
     }
 
     return result;
