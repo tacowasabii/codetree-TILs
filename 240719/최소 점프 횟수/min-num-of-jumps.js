@@ -9,12 +9,13 @@ let flag = false
 
 while (stack.length > 0){
     let [idx, num] = stack.pop()
+    // 점프하기 전에 먼저 도달했는지 검사를 해야 했는데 검사를 나중에 해서 도착지점인 0인곳에선 검사를 안해서 틀렸음
     if (idx === n - 1){
         ans = Math.min(ans, num)
         flag = true
-    } else {
-        for (let i = 1; i <= arr[idx]; i++){
-            if (idx < n - 1){
+    } else if (idx < n - 1){
+        {
+            for (let i = 1; i <= arr[idx]; i++){
                 stack.push([idx + i, num + 1])
             } 
         }
