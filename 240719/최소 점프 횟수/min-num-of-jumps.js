@@ -9,12 +9,14 @@ let flag = false
 
 while (stack.length > 0){
     let [idx, num] = stack.pop()
-    for (let i = 1; i <= arr[idx]; i++){
-        if (idx < n - 1){
-            stack.push([idx + i, num + 1])
-        } else if (idx === n - 1){
-            ans = Math.min(ans, num)
-            flag = true
+    if (idx === n - 1){
+        ans = Math.min(ans, num)
+        flag = true
+    } else {
+        for (let i = 1; i <= arr[idx]; i++){
+            if (idx < n - 1){
+                stack.push([idx + i, num + 1])
+            } 
         }
     }
 }
