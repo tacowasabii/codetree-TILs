@@ -18,7 +18,7 @@ function daysOfMonth(month, isYunNeyon){
             return 29
         }
         return 28
-    } else if (month in more) {
+    } else if (more.includes(month)) {
         return 31
     } else {
         return 30
