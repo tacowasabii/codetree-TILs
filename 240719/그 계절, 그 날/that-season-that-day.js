@@ -42,6 +42,6 @@ const [y, m, d] = fs.readFileSync(0).toString().trim().split(" ").map(Number)
 
 if (d <= daysOfMonth(m, isYunNeyon(y))){
     console.log(season(m))
+} else {
+    console.log(-1)
 }
-
-return -1
