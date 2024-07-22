@@ -10,6 +10,9 @@ function commonMultiple(a, b){
 }
 
 function solution(arr){
+    if (arr.length === 1){
+        return arr[0]
+    }
     const a = arr.pop()
     const b = arr.pop()
     if (arr.length === 0){
