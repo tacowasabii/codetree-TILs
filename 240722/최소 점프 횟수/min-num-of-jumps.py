@@ -6,7 +6,7 @@ ans = float('inf')
 
 while stack:
     [idx, num] = stack.pop()
-    if idx == n - 1:
+    if idx >= n - 1:
         ans = min(ans, num)
     else:
         for i in range(1, arr[idx] + 1):
