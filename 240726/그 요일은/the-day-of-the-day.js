@@ -10,4 +10,8 @@ const day2 = new Date(`2024-${m2}-${d2}`)
 
 const days = (day2 - day1) / (1000 * 60 * 60 * 24)
 
-console.log(parseInt((days + 1) / 7) + parseInt(((days + 1) % 7) / week[weekday]))
+if ((days + 1) % 7 >= week[weekday]){
+    console.log(parseInt((days + 1) / 7) + 1)
+} else {
+    console.log(parseInt((days + 1) / 7))
+}
