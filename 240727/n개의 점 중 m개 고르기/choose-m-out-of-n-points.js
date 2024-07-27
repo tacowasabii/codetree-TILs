@@ -24,10 +24,10 @@ const points = input.slice(1).map(point => point.split(" ").map(Number));
 let ans = Number.MAX_SAFE_INTEGER
 
 for (let comb of combination(points, m)){
-    dist = 0
+    let dist = 0
     for (let i = 0; i < comb.length; i++){
         for (let j = i + 1; j < comb.length; j++){
-            dist = Math.max(dist, distance(points[i], points[j]))
+            dist = Math.max(dist, distance(comb[i], comb[j]))
         }
     }
     ans = Math.min(ans, dist)
