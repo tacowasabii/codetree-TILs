@@ -13,7 +13,7 @@ for perm in perms:
     points = []
     for i in range(n):
         points.append([perm[i], i])
-    num = 10
+    num = 10000
     for point in points:
         num = min(num, matrix[point[0]][point[1]])
     ans = max(ans, num)
