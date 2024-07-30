@@ -28,8 +28,8 @@ for (let i = 0; i < n; i++){
                     }
                 }
             }
-            if (len > 1){
-                max = Math.max(max, len)
+            max = Math.max(max, len)
+            if (len >= 4){
                 cnt += 1
             }
         }
