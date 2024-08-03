@@ -30,13 +30,14 @@ while (queue.length > 0){
             new_r = r + dr[i]
             new_c = c + dc[i]
             if (0 <= new_r && new_r < n && 0 <= new_c && new_c < n && result[new_r][new_c] === -2){
-                sets.add([new_r, new_c])
+                sets.add(`${new_r},${new_c}`)
             }
         }
     }
     for (let elem of sets){
-        queue.push(elem)
-        result[elem[0]][elem[1]] = time
+        const new_elem = elem.split(",").map(Number)
+        queue.push(new_elem)
+        result[new_elem[0]][new_elem[1]] = time
     }
     time += 1
 }
