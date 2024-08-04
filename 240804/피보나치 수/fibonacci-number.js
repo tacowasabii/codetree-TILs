@@ -2,7 +2,7 @@ function pibonacci(n){
     if (n <= 2){
         return 1
     }
-    return pibonacci[n - 2] + pibonacci[n - 1]
+    return pibonacci(n - 2) + pibonacci(n - 1)
 }
 
 const fs = require("fs")
