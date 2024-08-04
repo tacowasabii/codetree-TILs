@@ -7,4 +7,4 @@ for (let i = 4; i <= n; i++){
     dp.push(dp[i - 2] + dp[i - 3])
 }
 
-console.log(dp[n])
+console.log(dp[n] % 10007)
